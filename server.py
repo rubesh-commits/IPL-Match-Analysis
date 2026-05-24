@@ -22,6 +22,7 @@ app.add_middleware(
 )
 
 df = pd.read_csv("IPL.csv")
+df.columns = df.columns.str.replace(r'\r', '', regex=True).str.strip().str.lower()
 
 @app.get("/")
 def home():
