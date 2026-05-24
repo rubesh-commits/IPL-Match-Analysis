@@ -1,3 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv("IPL.csv")
+
 def team_wins(df):
     matches = df.drop_duplicates(subset="match_id")
     wins = matches['match_won_by'].value_counts()
